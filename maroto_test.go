@@ -6,17 +6,17 @@ import (
 	"testing"
 	"time"
 
-	"github.com/johnfercher/maroto/v2/pkg/components/code"
-	"github.com/johnfercher/maroto/v2/pkg/components/text"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/code"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/text"
 
-	"github.com/johnfercher/maroto/v2/pkg/components/col"
-	"github.com/johnfercher/maroto/v2/pkg/components/page"
-	"github.com/johnfercher/maroto/v2/pkg/components/row"
-	"github.com/johnfercher/maroto/v2/pkg/config"
-	"github.com/johnfercher/maroto/v2/pkg/core"
-	"github.com/johnfercher/maroto/v2/pkg/test"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/col"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/page"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/row"
+	"github.com/SmartDriveInc/maroto/v2/pkg/config"
+	"github.com/SmartDriveInc/maroto/v2/pkg/core"
+	"github.com/SmartDriveInc/maroto/v2/pkg/test"
 
-	"github.com/johnfercher/maroto/v2"
+	"github.com/SmartDriveInc/maroto/v2"
 
 	"github.com/stretchr/testify/assert"
 )

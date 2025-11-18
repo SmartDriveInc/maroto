@@ -4,8 +4,8 @@ import (
 	"errors"
 	"os"
 
-	"github.com/johnfercher/maroto/v2/pkg/consts/extension"
-	"github.com/johnfercher/maroto/v2/pkg/core/entity"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/extension"
+	"github.com/SmartDriveInc/maroto/v2/pkg/core/entity"
 )
 
 // Cache is the interface to cache images.

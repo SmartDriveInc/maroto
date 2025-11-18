@@ -4,24 +4,24 @@ import (
 	"errors"
 	"math"
 
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/generation"
 	"github.com/f-amaral/go-async/pool"
-	"github.com/johnfercher/maroto/v2/pkg/consts/generation"
 
-	"github.com/johnfercher/maroto/v2/internal/cache"
+	"github.com/SmartDriveInc/maroto/v2/internal/cache"
 
-	"github.com/johnfercher/maroto/v2/internal/providers/gofpdf"
+	"github.com/SmartDriveInc/maroto/v2/internal/providers/gofpdf"
 
-	"github.com/johnfercher/maroto/v2/pkg/merge"
+	"github.com/SmartDriveInc/maroto/v2/pkg/merge"
 
-	"github.com/johnfercher/maroto/v2/pkg/core/entity"
+	"github.com/SmartDriveInc/maroto/v2/pkg/core/entity"
 
 	"github.com/johnfercher/go-tree/node"
 
-	"github.com/johnfercher/maroto/v2/pkg/components/col"
-	"github.com/johnfercher/maroto/v2/pkg/components/page"
-	"github.com/johnfercher/maroto/v2/pkg/components/row"
-	"github.com/johnfercher/maroto/v2/pkg/config"
-	"github.com/johnfercher/maroto/v2/pkg/core"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/col"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/page"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/row"
+	"github.com/SmartDriveInc/maroto/v2/pkg/config"
+	"github.com/SmartDriveInc/maroto/v2/pkg/core"
 )
 
 type Maroto struct {

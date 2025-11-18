@@ -7,17 +7,17 @@ import (
 	"image/draw"
 	"image/png"
 
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/barcode"
 	"github.com/boombuler/barcode/code128"
 	"github.com/boombuler/barcode/ean"
-	"github.com/johnfercher/maroto/v2/pkg/consts/barcode"
 
 	libBarcode "github.com/boombuler/barcode"
 	"github.com/boombuler/barcode/datamatrix"
 	"github.com/boombuler/barcode/qr"
 
-	"github.com/johnfercher/maroto/v2/pkg/consts/extension"
-	"github.com/johnfercher/maroto/v2/pkg/core/entity"
-	"github.com/johnfercher/maroto/v2/pkg/props"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/extension"
+	"github.com/SmartDriveInc/maroto/v2/pkg/core/entity"
+	"github.com/SmartDriveInc/maroto/v2/pkg/props"
 )
 
 // codeInstance is the singleton of code, opted to use a singleton to ensure that

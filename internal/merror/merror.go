@@ -1,9 +1,9 @@
 package merror
 
 import (
-	"github.com/johnfercher/maroto/v2/pkg/consts/fontfamily"
-	"github.com/johnfercher/maroto/v2/pkg/consts/fontstyle"
-	"github.com/johnfercher/maroto/v2/pkg/props"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/fontfamily"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/fontstyle"
+	"github.com/SmartDriveInc/maroto/v2/pkg/props"
 )
 
 // DefaultErrorText is the default error text properties.

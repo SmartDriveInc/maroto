@@ -3,17 +3,17 @@ package main
 import (
 	"log"
 
-	"github.com/johnfercher/maroto/v2/pkg/core"
+	"github.com/SmartDriveInc/maroto/v2/pkg/core"
 
-	"github.com/johnfercher/maroto/v2/pkg/components/col"
-	"github.com/johnfercher/maroto/v2/pkg/components/line"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/col"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/line"
 
-	"github.com/johnfercher/maroto/v2"
+	"github.com/SmartDriveInc/maroto/v2"
 
-	"github.com/johnfercher/maroto/v2/pkg/components/code"
-	"github.com/johnfercher/maroto/v2/pkg/components/image"
-	"github.com/johnfercher/maroto/v2/pkg/components/signature"
-	"github.com/johnfercher/maroto/v2/pkg/components/text"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/code"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/image"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/signature"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/text"
 )
 
 func main() {

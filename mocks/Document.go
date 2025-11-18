@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	metrics "github.com/johnfercher/maroto/v2/pkg/metrics"
+	metrics "github.com/SmartDriveInc/maroto/v2/pkg/metrics"
 	mock "github.com/stretchr/testify/mock"
 )
 
