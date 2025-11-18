@@ -1,9 +1,9 @@
 # Merge PDF
 
 ## GoDoc
-* [merge : Bytes](https://pkg.go.dev/github.com/johnfercher/maroto/v2/pkg/merge#Bytes)
-* [interface : Document](https://pkg.go.dev/github.com/johnfercher/maroto/v2/pkg/core#Document)
-* [pdf : Merge](https://pkg.go.dev/github.com/johnfercher/maroto/v2/pkg/core#Pdf.Merge)
+* [merge : Bytes](https://pkg.go.dev/github.com/SmartDriveInc/maroto/v2/pkg/merge#Bytes)
+* [interface : Document](https://pkg.go.dev/github.com/SmartDriveInc/maroto/v2/pkg/core#Document)
+* [pdf : Merge](https://pkg.go.dev/github.com/SmartDriveInc/maroto/v2/pkg/core#Pdf.Merge)
 
 ## Code Example
 [filename](../../assets/examples/mergepdf/v2/main.go  ':include :type=code')
@@ -17,4 +17,4 @@
 [filename](../../assets/text/mergepdfv2.txt  ':include :type=code')
 
 ## Test File
-[filename](https://raw.githubusercontent.com/johnfercher/maroto/master/test/maroto/examples/mergepdf.json  ':include :type=code')
+[filename](https://raw.githubusercontent.com/SmartDriveInc/maroto/master/test/maroto/examples/mergepdf.json  ':include :type=code')

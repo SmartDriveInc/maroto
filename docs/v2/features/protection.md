@@ -1,8 +1,8 @@
 # Protection
 
 ## GoDoc
-* [builder : WithProtection](https://pkg.go.dev/github.com/johnfercher/maroto/v2/pkg/config#CfgBuilder.WithProtection)
-* [protection : Type](https://pkg.go.dev/github.com/johnfercher/maroto/v2/pkg/consts/protection)
+* [builder : WithProtection](https://pkg.go.dev/github.com/SmartDriveInc/maroto/v2/pkg/config#CfgBuilder.WithProtection)
+* [protection : Type](https://pkg.go.dev/github.com/SmartDriveInc/maroto/v2/pkg/consts/protection)
 
 ## Code Example
 [filename](../../assets/examples/protection/v2/main.go ':include :type=code')
@@ -15,4 +15,4 @@
 [filename](../../assets/text/protectionv2.txt  ':include :type=code')
 
 ## Test File
-[filename](https://raw.githubusercontent.com/johnfercher/maroto/master/test/maroto/examples/protection.json  ':include :type=code')
+[filename](https://raw.githubusercontent.com/SmartDriveInc/maroto/master/test/maroto/examples/protection.json  ':include :type=code')
