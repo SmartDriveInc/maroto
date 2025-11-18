@@ -166,6 +166,7 @@ func (s *text) getLinesBreakingLineWithDash(words string, colWidth float64) []st
 	return lines
 }
 
+
 func (s *text) addLine(textProp *props.Text, xColOffset, colWidth, yColOffset, textWidth float64, text string) {
 	left, top, _, _ := s.pdf.GetMargins()
 
