@@ -268,6 +268,10 @@ func (g *provider) SetCompression(compression bool) {
 	g.fpdf.SetCompression(compression)
 }
 
+func (g *provider) GetFpdf() interface{} {
+	return g.fpdf
+}
+
 func (g *provider) getBarcodeImageName(code string, prop *props.Barcode) string {
 	if prop == nil {
 		return code + string(barcode.Code128)

@@ -40,7 +40,7 @@ func TestGetLinesheight(t *testing.T) {
 		assert.Equal(t, 2, height)
 	})
 
-	t.Run("When a text that occupies two lines is sent with EmptySpaceStrategy, should two is returned", func(t *testing.T) {
+	t.Run("When a text that occupies two lines is sent with DashStrategy, should two is returned", func(t *testing.T) {
 		textProp := &props.Text{BreakLineStrategy: breakline.DashStrategy}
 		textProp.MakeValid(&props.Font{Family: fontfamily.Arial, Size: 10, Style: fontstyle.Normal})
 
@@ -59,4 +59,5 @@ func TestGetLinesheight(t *testing.T) {
 
 		assert.Equal(t, 2, height)
 	})
+
 }
