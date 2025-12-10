@@ -1,8 +1,8 @@
 # Orientation
 
 ## GoDoc
-* [builder : WithOrientation](https://pkg.go.dev/github.com/johnfercher/maroto/v2/pkg/config#CfgBuilder.WithOrientation)
-* [orientation : Type](https://pkg.go.dev/github.com/johnfercher/maroto/v2/pkg/consts/orientation)
+* [builder : WithOrientation](https://pkg.go.dev/github.com/SmartDriveInc/maroto/v2/pkg/config#CfgBuilder.WithOrientation)
+* [orientation : Type](https://pkg.go.dev/github.com/SmartDriveInc/maroto/v2/pkg/consts/orientation)
 
 ## Code Example
 [filename](../../assets/examples/orientation/v2/main.go ':include :type=code')
@@ -16,4 +16,4 @@
 [filename](../../assets/text/orientationv2.txt  ':include :type=code')
 
 ## Test File
-[filename](https://raw.githubusercontent.com/johnfercher/maroto/master/test/maroto/examples/orientation.json  ':include :type=code')
+[filename](https://raw.githubusercontent.com/SmartDriveInc/maroto/master/test/maroto/examples/orientation.json  ':include :type=code')

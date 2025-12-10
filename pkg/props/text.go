@@ -2,9 +2,9 @@
 package props
 
 import (
-	"github.com/johnfercher/maroto/v2/pkg/consts/align"
-	"github.com/johnfercher/maroto/v2/pkg/consts/breakline"
-	"github.com/johnfercher/maroto/v2/pkg/consts/fontstyle"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/align"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/breakline"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/fontstyle"
 )
 
 // Text represents properties from a Text inside a cell.

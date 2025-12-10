@@ -1,15 +1,15 @@
 package gofpdf
 
 import (
-	"github.com/phpdave11/gofpdf"
+	"github.com/jung-kurt/gofpdf"
 
-	"github.com/johnfercher/maroto/v2/internal/cache"
-	"github.com/johnfercher/maroto/v2/internal/code"
-	"github.com/johnfercher/maroto/v2/internal/math"
-	"github.com/johnfercher/maroto/v2/internal/providers/gofpdf/cellwriter"
-	"github.com/johnfercher/maroto/v2/internal/providers/gofpdf/gofpdfwrapper"
-	"github.com/johnfercher/maroto/v2/pkg/core"
-	"github.com/johnfercher/maroto/v2/pkg/core/entity"
+	"github.com/SmartDriveInc/maroto/v2/internal/cache"
+	"github.com/SmartDriveInc/maroto/v2/internal/code"
+	"github.com/SmartDriveInc/maroto/v2/internal/math"
+	"github.com/SmartDriveInc/maroto/v2/internal/providers/gofpdf/cellwriter"
+	"github.com/SmartDriveInc/maroto/v2/internal/providers/gofpdf/gofpdfwrapper"
+	"github.com/SmartDriveInc/maroto/v2/pkg/core"
+	"github.com/SmartDriveInc/maroto/v2/pkg/core/entity"
 )
 
 // Dependencies is the dependencies provider for gofpdf

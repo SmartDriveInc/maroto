@@ -7,16 +7,16 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/johnfercher/maroto/v2/pkg/consts/barcode"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/barcode"
 
-	"github.com/johnfercher/maroto/v2/internal/cache"
-	"github.com/johnfercher/maroto/v2/internal/merror"
-	"github.com/johnfercher/maroto/v2/internal/providers/gofpdf/cellwriter"
-	"github.com/johnfercher/maroto/v2/internal/providers/gofpdf/gofpdfwrapper"
-	"github.com/johnfercher/maroto/v2/pkg/consts/extension"
-	"github.com/johnfercher/maroto/v2/pkg/core"
-	"github.com/johnfercher/maroto/v2/pkg/core/entity"
-	"github.com/johnfercher/maroto/v2/pkg/props"
+	"github.com/SmartDriveInc/maroto/v2/internal/cache"
+	"github.com/SmartDriveInc/maroto/v2/internal/merror"
+	"github.com/SmartDriveInc/maroto/v2/internal/providers/gofpdf/cellwriter"
+	"github.com/SmartDriveInc/maroto/v2/internal/providers/gofpdf/gofpdfwrapper"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/extension"
+	"github.com/SmartDriveInc/maroto/v2/pkg/core"
+	"github.com/SmartDriveInc/maroto/v2/pkg/core/entity"
+	"github.com/SmartDriveInc/maroto/v2/pkg/props"
 )
 
 type provider struct {
@@ -266,6 +266,10 @@ func (g *provider) CreateCol(width, height float64, config *entity.Config, prop 
 
 func (g *provider) SetCompression(compression bool) {
 	g.fpdf.SetCompression(compression)
+}
+
+func (g *provider) GetFpdf() interface{} {
+	return g.fpdf
 }
 
 func (g *provider) getBarcodeImageName(code string, prop *props.Barcode) string {

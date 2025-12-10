@@ -1,11 +1,11 @@
 package maroto
 
 import (
+	"github.com/SmartDriveInc/maroto/v2/internal/time"
+	"github.com/SmartDriveInc/maroto/v2/pkg/core"
+	"github.com/SmartDriveInc/maroto/v2/pkg/core/entity"
+	"github.com/SmartDriveInc/maroto/v2/pkg/metrics"
 	"github.com/johnfercher/go-tree/node"
-	"github.com/johnfercher/maroto/v2/internal/time"
-	"github.com/johnfercher/maroto/v2/pkg/core"
-	"github.com/johnfercher/maroto/v2/pkg/core/entity"
-	"github.com/johnfercher/maroto/v2/pkg/metrics"
 )
 
 type MetricsDecorator struct {
@@ -36,6 +36,11 @@ func (m *MetricsDecorator) FitlnCurrentPage(heightNewLine float64) bool {
 // GetCurrentConfig decorates the GetCurrentConfig method of maroto instance.
 func (m *MetricsDecorator) GetCurrentConfig() *entity.Config {
 	return m.inner.GetCurrentConfig()
+}
+
+// GetProvider returns the underlying provider for advanced drawing operations
+func (m *MetricsDecorator) GetProvider() core.Provider {
+	return m.inner.GetProvider()
 }
 
 // Generate decorates the Generate method of maroto instance.

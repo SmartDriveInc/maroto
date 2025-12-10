@@ -1,7 +1,7 @@
 # Custom Dimensions
 
 ## GoDoc
-* [builder : WithDimensions](https://pkg.go.dev/github.com/johnfercher/maroto/v2/pkg/config#CfgBuilder.WithDimensions)
+* [builder : WithDimensions](https://pkg.go.dev/github.com/SmartDriveInc/maroto/v2/pkg/config#CfgBuilder.WithDimensions)
 
 ## Code Example
 [filename](../../assets/examples/customdimensions/v2/main.go ':include :type=code')
@@ -14,4 +14,4 @@
 [filename](../../assets/text/customdimensionsv2.txt  ':include :type=code')
 
 ## Test File
-[filename](https://raw.githubusercontent.com/johnfercher/maroto/master/test/maroto/examples/customdimensions.json  ':include :type=code')
+[filename](https://raw.githubusercontent.com/SmartDriveInc/maroto/master/test/maroto/examples/customdimensions.json  ':include :type=code')

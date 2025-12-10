@@ -1,9 +1,9 @@
 package core
 
 import (
-	"github.com/johnfercher/maroto/v2/pkg/consts/extension"
-	"github.com/johnfercher/maroto/v2/pkg/core/entity"
-	"github.com/johnfercher/maroto/v2/pkg/props"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/extension"
+	"github.com/SmartDriveInc/maroto/v2/pkg/core/entity"
+	"github.com/SmartDriveInc/maroto/v2/pkg/props"
 )
 
 // Provider is the abstraction of a document creator provider.
@@ -34,4 +34,9 @@ type Provider interface {
 	SetProtection(protection *entity.Protection)
 	SetCompression(compression bool)
 	SetMetadata(metadata *entity.Metadata)
+
+	// Extension: Access to underlying drawing engine
+	// Returns interface{} to avoid circular dependencies
+	// Cast to appropriate type (e.g., gofpdfwrapper.Fpdf) for direct access
+	GetFpdf() interface{}
 }

@@ -4,9 +4,9 @@ package core
 import (
 	"github.com/johnfercher/go-tree/node"
 
-	"github.com/johnfercher/maroto/v2/pkg/core/entity"
-	"github.com/johnfercher/maroto/v2/pkg/metrics"
-	"github.com/johnfercher/maroto/v2/pkg/props"
+	"github.com/SmartDriveInc/maroto/v2/pkg/core/entity"
+	"github.com/SmartDriveInc/maroto/v2/pkg/metrics"
+	"github.com/SmartDriveInc/maroto/v2/pkg/props"
 )
 
 // Maroto is the interface that wraps the basic methods of maroto.
@@ -18,6 +18,7 @@ type Maroto interface {
 	AddAutoRow(cols ...Col) Row
 	FitlnCurrentPage(heightNewLine float64) bool
 	GetCurrentConfig() *entity.Config
+	GetProvider() Provider
 	AddPages(pages ...Page)
 	GetStructure() *node.Node[Structure]
 	Generate() (Document, error)

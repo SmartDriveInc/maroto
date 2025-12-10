@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/johnfercher/maroto/v2/internal/fixture"
-	"github.com/johnfercher/maroto/v2/mocks"
-	"github.com/johnfercher/maroto/v2/pkg/core/entity"
+	"github.com/SmartDriveInc/maroto/v2/internal/fixture"
+	"github.com/SmartDriveInc/maroto/v2/mocks"
+	"github.com/SmartDriveInc/maroto/v2/pkg/core/entity"
 
-	"github.com/johnfercher/maroto/v2/internal/providers/gofpdf/cellwriter"
+	"github.com/SmartDriveInc/maroto/v2/internal/providers/gofpdf/cellwriter"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -47,7 +47,7 @@ func TestCellWriter_Apply(t *testing.T) {
 		width := 100.0
 		height := 200.0
 		fpdf := mocks.NewFpdf(t)
-		fpdf.EXPECT().CellFormat(width, height, "", "LTRB", 0, "C", false, 0, "")
+		fpdf.EXPECT().CellFormat(width, height, "", "1", 0, "C", false, 0, "")
 
 		sut := cellwriter.NewCellWriter(fpdf)
 
@@ -83,7 +83,7 @@ func TestCellWriter_Apply(t *testing.T) {
 		width := 100.0
 		height := 200.0
 		fpdf := mocks.NewFpdf(t)
-		fpdf.EXPECT().CellFormat(width, height, "", "LTRB", 0, "C", true, 0, "")
+		fpdf.EXPECT().CellFormat(width, height, "", "1", 0, "C", true, 0, "")
 
 		sut := cellwriter.NewCellWriter(fpdf)
 

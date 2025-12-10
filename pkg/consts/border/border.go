@@ -2,64 +2,92 @@
 package border
 
 // Type represents a border type.
-type Type int
-
-// None is the default border type.
-const None Type = 0
+type Type string
 
 const (
-	// Left is a border type that borders the left side.
-	Left Type = 1 << iota
-	// Top is a border type that borders the top side.
-	Top
-	// Right is a border type that borders the right side.
-	Right
-	// Bottom is a border type that borders the bottom side.
-	Bottom
+	// None is the default border type.
+	None Type = ""
 	// Full is a border type that borders all sides.
-	Full = Left | Top | Right | Bottom
+	Full Type = "1"
+	// Left is a border type that borders the left side.
+	Left Type = "L"
+	// Top is a border type that borders the top side.
+	Top Type = "T"
+	// Right is a border type that borders the right side.
+	Right Type = "R"
+	// Bottom is a border type that borders the bottom side.
+	Bottom Type = "B"
 )
 
 // IsValid checks if the border type is valid.
 func (t Type) IsValid() bool {
-	return t > None && t <= Full
+	return t == Full || t == Left || t == Top || t == Right || t == Bottom
 }
 
-// HasLeft checks if the border type includes left border.
-func (t Type) HasLeft() bool {
-	return t&Left != 0
+// BorderConfig represents a border configuration with individual side controls.
+type BorderConfig struct {
+	Left   bool
+	Top    bool
+	Right  bool
+	Bottom bool
 }
 
-// HasTop checks if the border type includes top border.
-func (t Type) HasTop() bool {
-	return t&Top != 0
-}
+// ToGofpdfString converts BorderConfig to gofpdf border string format.
+func (b BorderConfig) ToGofpdfString() string {
+	if !b.Left && !b.Top && !b.Right && !b.Bottom {
+		return ""
+	}
 
-// HasRight checks if the border type includes right border.
-func (t Type) HasRight() bool {
-	return t&Right != 0
-}
+	if b.Left && b.Top && b.Right && b.Bottom {
+		return "1" // Full border
+	}
 
-// HasBottom checks if the border type includes bottom border.
-func (t Type) HasBottom() bool {
-	return t&Bottom != 0
-}
-
-// String returns the string representation of the border type.
-func (t Type) String() string {
-	result := ""
-	if t.HasLeft() {
+	var result string
+	if b.Left {
 		result += "L"
 	}
-	if t.HasTop() {
+	if b.Top {
 		result += "T"
 	}
-	if t.HasRight() {
+	if b.Right {
 		result += "R"
 	}
-	if t.HasBottom() {
+	if b.Bottom {
 		result += "B"
 	}
 
 	return result
+}
+
+// HasBorder returns true if any border side is enabled.
+func (b BorderConfig) HasBorder() bool {
+	return b.Left || b.Top || b.Right || b.Bottom
+}
+
+// FromType creates a BorderConfig from the legacy Type for backward compatibility.
+func FromType(t Type) BorderConfig {
+	switch t {
+	case Full:
+		return BorderConfig{Left: true, Top: true, Right: true, Bottom: true}
+	case Left:
+		return BorderConfig{Left: true}
+	case Top:
+		return BorderConfig{Top: true}
+	case Right:
+		return BorderConfig{Right: true}
+	case Bottom:
+		return BorderConfig{Bottom: true}
+	default:
+		return BorderConfig{}
+	}
+}
+
+// NewConfig creates a BorderConfig with specified sides enabled.
+func NewConfig(left, top, right, bottom bool) BorderConfig {
+	return BorderConfig{
+		Left:   left,
+		Top:    top,
+		Right:  right,
+		Bottom: bottom,
+	}
 }

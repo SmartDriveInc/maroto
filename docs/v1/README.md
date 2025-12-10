@@ -2,14 +2,14 @@
 
 # Maroto
 
-[![GoDoc](https://godoc.org/github.com/johnfercher/maroto?status.svg)](https://godoc.org/github.com/johnfercher/maroto)
-[![Go Report Card](https://goreportcard.com/badge/github.com/johnfercher/maroto)](https://goreportcard.com/report/github.com/johnfercher/maroto)
+[![GoDoc](https://godoc.org/github.com/SmartDriveInc/maroto?status.svg)](https://godoc.org/github.com/SmartDriveInc/maroto)
+[![Go Report Card](https://goreportcard.com/badge/github.com/SmartDriveInc/maroto)](https://goreportcard.com/report/github.com/SmartDriveInc/maroto)
 [![Mentioned in Awesome Go](https://awesome.re/mentioned-badge.svg)](https://github.com/avelino/awesome-go#template-engines)  
-[![CI](https://github.com/johnfercher/maroto/actions/workflows/goci.yml/badge.svg)](https://github.com/johnfercher/maroto/actions/workflows/goci.yml)
-[![Lint](https://github.com/johnfercher/maroto/actions/workflows/golangci-lint.yml/badge.svg)](https://github.com/johnfercher/maroto/actions/workflows/golangci-lint.yml)
-[![Codecov](https://img.shields.io/codecov/c/github/johnfercher/maroto)](https://codecov.io/gh/johnfercher/maroto)
+[![CI](https://github.com/SmartDriveInc/maroto/actions/workflows/goci.yml/badge.svg)](https://github.com/SmartDriveInc/maroto/actions/workflows/goci.yml)
+[![Lint](https://github.com/SmartDriveInc/maroto/actions/workflows/golangci-lint.yml/badge.svg)](https://github.com/SmartDriveInc/maroto/actions/workflows/golangci-lint.yml)
+[![Codecov](https://img.shields.io/codecov/c/github/SmartDriveInc/maroto)](https://codecov.io/gh/SmartDriveInc/maroto)
 
-A Maroto way to create PDFs. Maroto is inspired in Bootstrap and uses [Gofpdf](https://github.com/phpdave11/gofpdf). Fast and simple.
+A Maroto way to create PDFs. Maroto is inspired in Bootstrap and uses [Gofpdf](https://github.com/jung-kurt/gofpdf). Fast and simple.
 
 > Maroto definition: Brazilian expression, means an astute/clever/intelligent person.
 
@@ -28,12 +28,12 @@ go get -u github.com/johnfercher/pkg/internal
 ## Contributing
 
 | Command         | Description                                       | Dependencies                                                 |
-|-----------------|---------------------------------------------------|--------------------------------------------------------------|
+| --------------- | ------------------------------------------------- | ------------------------------------------------------------ |
 | `make build`    | Build project                                     | `go`                                                         |
 | `make test`     | Run unit tests                                    | `go`                                                         |
 | `make fmt`      | Format files                                      | `gofmt`, `gofumpt` and `goimports`                           |
 | `make lint`     | Check files                                       | `golangci-lint` and `goreportcard-cli`                       |
-| `make dod`      | (Definition of Done) Format files and check files | Same as`make build`, `make test`, `make fmt` and `make lint` | 
+| `make dod`      | (Definition of Done) Format files and check files | Same as`make build`, `make test`, `make fmt` and `make lint` |
 | `make install`  | Install all dependencies                          | `go`, `curl` and `git`                                       |
 | `make examples` | Run all examples                                  | `go`                                                         |
 
@@ -48,10 +48,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/johnfercher/maroto/pkg/color"
-	"github.com/johnfercher/maroto/pkg/consts"
-	"github.com/johnfercher/maroto/pkg/pdf"
-	"github.com/johnfercher/maroto/pkg/props"
+	"github.com/SmartDriveInc/maroto/pkg/color"
+	"github.com/SmartDriveInc/maroto/pkg/consts"
+	"github.com/SmartDriveInc/maroto/pkg/pdf"
+	"github.com/SmartDriveInc/maroto/pkg/props"
 	"os"
 	"time"
 )
@@ -215,4 +215,4 @@ func main() {
 
 ## Stargazers over time
 
-[![Stargazers over time](https://starchart.cc/johnfercher/maroto.svg)](https://starchart.cc/johnfercher/maroto)
+[![Stargazers over time](https://starchart.cc/SmartDriveInc/maroto.svg)](https://starchart.cc/SmartDriveInc/maroto)

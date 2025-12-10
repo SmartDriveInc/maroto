@@ -5,13 +5,13 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/johnfercher/maroto/v2/pkg/consts/border"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/border"
 )
 
 func TestType_IsValid(t *testing.T) {
-	t.Run("When type is None, should not be valid", func(t *testing.T) {
+	t.Run("When type is empty, should not be valid", func(t *testing.T) {
 		// Arrange
-		borderType := border.None
+		borderType := border.Type("")
 
 		// Act & Assert
 		assert.False(t, borderType.IsValid())
@@ -53,131 +53,113 @@ func TestType_IsValid(t *testing.T) {
 	})
 }
 
-func TestType_HasBorders(t *testing.T) {
-	t.Run("When type is None, should not have any border", func(t *testing.T) {
-		// Arrange
-		borderType := border.None
+func TestBorderConfig_ToGofpdfString(t *testing.T) {
+	tests := []struct {
+		name   string
+		config border.BorderConfig
+		want   string
+	}{
+		{
+			name:   "No borders",
+			config: border.BorderConfig{},
+			want:   "",
+		},
+		{
+			name:   "Full border",
+			config: border.BorderConfig{Left: true, Top: true, Right: true, Bottom: true},
+			want:   "1",
+		},
+		{
+			name:   "Left and Top",
+			config: border.BorderConfig{Left: true, Top: true},
+			want:   "LT",
+		},
+		{
+			name:   "Right and Bottom",
+			config: border.BorderConfig{Right: true, Bottom: true},
+			want:   "RB",
+		},
+		{
+			name:   "Only Left",
+			config: border.BorderConfig{Left: true},
+			want:   "L",
+		},
+		{
+			name:   "All except Bottom",
+			config: border.BorderConfig{Left: true, Top: true, Right: true},
+			want:   "LTR",
+		},
+	}
 
-		// Act & Assert
-		assert.False(t, borderType.HasLeft())
-		assert.False(t, borderType.HasTop())
-		assert.False(t, borderType.HasRight())
-		assert.False(t, borderType.HasBottom())
-	})
-
-	t.Run("When type is Full, should have all borders", func(t *testing.T) {
-		// Arrange
-		borderType := border.Full
-
-		// Act & Assert
-		assert.True(t, borderType.HasLeft())
-		assert.True(t, borderType.HasTop())
-		assert.True(t, borderType.HasRight())
-		assert.True(t, borderType.HasBottom())
-	})
-
-	t.Run("When type is Left, should have only left border", func(t *testing.T) {
-		// Arrange
-		borderType := border.Left
-
-		// Act & Assert
-		assert.True(t, borderType.HasLeft())
-		assert.False(t, borderType.HasTop())
-		assert.False(t, borderType.HasRight())
-		assert.False(t, borderType.HasBottom())
-	})
-
-	t.Run("When type is combined (Left|Top), should have left and top borders", func(t *testing.T) {
-		// Arrange
-		borderType := border.Left | border.Top
-
-		// Act & Assert
-		assert.True(t, borderType.HasLeft())
-		assert.True(t, borderType.HasTop())
-		assert.False(t, borderType.HasRight())
-		assert.False(t, borderType.HasBottom())
-	})
-
-	t.Run("When type is combined (Left|Right), should have left and right borders", func(t *testing.T) {
-		// Arrange
-		borderType := border.Left | border.Right
-
-		// Act & Assert
-		assert.True(t, borderType.HasLeft())
-		assert.False(t, borderType.HasTop())
-		assert.True(t, borderType.HasRight())
-		assert.False(t, borderType.HasBottom())
-	})
-
-	t.Run("When type is combined (Top|Bottom), should have top and bottom borders", func(t *testing.T) {
-		// Arrange
-		borderType := border.Top | border.Bottom
-
-		// Act & Assert
-		assert.False(t, borderType.HasLeft())
-		assert.True(t, borderType.HasTop())
-		assert.False(t, borderType.HasRight())
-		assert.True(t, borderType.HasBottom())
-	})
-
-	t.Run("When type is combined (Left|Top|Right), should have left, top and right borders", func(t *testing.T) {
-		// Arrange
-		borderType := border.Left | border.Top | border.Right
-
-		// Act & Assert
-		assert.True(t, borderType.HasLeft())
-		assert.True(t, borderType.HasTop())
-		assert.True(t, borderType.HasRight())
-		assert.False(t, borderType.HasBottom())
-	})
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			assert.Equal(t, tt.want, tt.config.ToGofpdfString())
+		})
+	}
 }
 
-func TestType_String(t *testing.T) {
-	t.Run("When type is None, should return empty string", func(t *testing.T) {
-		// Arrange
-		borderType := border.None
+func TestBorderConfig_HasBorder(t *testing.T) {
+	tests := []struct {
+		name   string
+		config border.BorderConfig
+		want   bool
+	}{
+		{
+			name:   "No borders",
+			config: border.BorderConfig{},
+			want:   false,
+		},
+		{
+			name:   "Has Left border",
+			config: border.BorderConfig{Left: true},
+			want:   true,
+		},
+		{
+			name:   "Has multiple borders",
+			config: border.BorderConfig{Left: true, Top: true},
+			want:   true,
+		},
+	}
 
-		// Act & Assert
-		assert.Equal(t, "", borderType.String())
-	})
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			assert.Equal(t, tt.want, tt.config.HasBorder())
+		})
+	}
+}
 
-	t.Run("When type is Full, should return 'LTRB'", func(t *testing.T) {
-		// Arrange
-		borderType := border.Full
+func TestFromType(t *testing.T) {
+	tests := []struct {
+		name string
+		t    border.Type
+		want border.BorderConfig
+	}{
+		{
+			name: "Full type",
+			t:    border.Full,
+			want: border.BorderConfig{Left: true, Top: true, Right: true, Bottom: true},
+		},
+		{
+			name: "Left type",
+			t:    border.Left,
+			want: border.BorderConfig{Left: true},
+		},
+		{
+			name: "None type",
+			t:    border.None,
+			want: border.BorderConfig{},
+		},
+	}
 
-		// Act & Assert
-		assert.Equal(t, "LTRB", borderType.String())
-	})
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			assert.Equal(t, tt.want, border.FromType(tt.t))
+		})
+	}
+}
 
-	t.Run("When type is Left, should return 'L'", func(t *testing.T) {
-		// Arrange
-		borderType := border.Left
-
-		// Act & Assert
-		assert.Equal(t, "L", borderType.String())
-	})
-
-	t.Run("When type is combined (Left|Top), should return 'LT'", func(t *testing.T) {
-		// Arrange
-		borderType := border.Left | border.Top
-
-		// Act & Assert
-		assert.Equal(t, "LT", borderType.String())
-	})
-
-	t.Run("When type is combined (Left|Right), should return 'LR'", func(t *testing.T) {
-		// Arrange
-		borderType := border.Left | border.Right
-
-		// Act & Assert
-		assert.Equal(t, "LR", borderType.String())
-	})
-
-	t.Run("When type is combined (Left|Top|Right), should return 'LTR'", func(t *testing.T) {
-		// Arrange
-		borderType := border.Left | border.Top | border.Right
-
-		// Act & Assert
-		assert.Equal(t, "LTR", borderType.String())
-	})
+func TestNewConfig(t *testing.T) {
+	config := border.NewConfig(true, false, true, false)
+	expected := border.BorderConfig{Left: true, Top: false, Right: true, Bottom: false}
+	assert.Equal(t, expected, config)
 }

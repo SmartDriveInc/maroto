@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/johnfercher/maroto/v2/internal/providers/gofpdf"
-	"github.com/johnfercher/maroto/v2/pkg/consts/breakline"
-	"github.com/johnfercher/maroto/v2/pkg/consts/fontfamily"
-	"github.com/johnfercher/maroto/v2/pkg/consts/fontstyle"
-	"github.com/johnfercher/maroto/v2/pkg/props"
+	"github.com/SmartDriveInc/maroto/v2/internal/providers/gofpdf"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/breakline"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/fontfamily"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/fontstyle"
+	"github.com/SmartDriveInc/maroto/v2/pkg/props"
 
-	"github.com/johnfercher/maroto/v2/mocks"
+	"github.com/SmartDriveInc/maroto/v2/mocks"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -30,9 +30,8 @@ func TestGetLinesheight(t *testing.T) {
 		font.EXPECT().SetFont(textProp.Family, textProp.Style, textProp.Size)
 
 		pdf := mocks.NewFpdf(t)
+		pdf.EXPECT().GetStringWidth("text ").Return(5)
 		pdf.EXPECT().UnicodeTranslatorFromDescriptor("").Return(func(s string) string { return s })
-		pdf.EXPECT().GetStringWidth("text").Return(5.0)  // First token just returns text
-		pdf.EXPECT().GetStringWidth(" text").Return(6.0) // subsequent tokens return leading space
 
 		text := gofpdf.NewText(pdf, mocks.NewMath(t), font)
 
@@ -41,7 +40,7 @@ func TestGetLinesheight(t *testing.T) {
 		assert.Equal(t, 2, height)
 	})
 
-	t.Run("When a text that occupies two lines is sent with EmptySpaceStrategy, should two is returned", func(t *testing.T) {
+	t.Run("When a text that occupies two lines is sent with DashStrategy, should two is returned", func(t *testing.T) {
 		textProp := &props.Text{BreakLineStrategy: breakline.DashStrategy}
 		textProp.MakeValid(&props.Font{Family: fontfamily.Arial, Size: 10, Style: fontstyle.Normal})
 
@@ -60,4 +59,5 @@ func TestGetLinesheight(t *testing.T) {
 
 		assert.Equal(t, 2, height)
 	})
+
 }

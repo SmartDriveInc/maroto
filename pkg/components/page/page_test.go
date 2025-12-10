@@ -3,15 +3,15 @@ package page_test
 import (
 	"testing"
 
-	"github.com/johnfercher/maroto/v2/internal/fixture"
-	"github.com/johnfercher/maroto/v2/mocks"
-	"github.com/johnfercher/maroto/v2/pkg/components/image"
-	"github.com/johnfercher/maroto/v2/pkg/components/page"
-	"github.com/johnfercher/maroto/v2/pkg/consts/extension"
-	"github.com/johnfercher/maroto/v2/pkg/core"
-	"github.com/johnfercher/maroto/v2/pkg/core/entity"
-	"github.com/johnfercher/maroto/v2/pkg/props"
-	"github.com/johnfercher/maroto/v2/pkg/test"
+	"github.com/SmartDriveInc/maroto/v2/internal/fixture"
+	"github.com/SmartDriveInc/maroto/v2/mocks"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/image"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/page"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/extension"
+	"github.com/SmartDriveInc/maroto/v2/pkg/core"
+	"github.com/SmartDriveInc/maroto/v2/pkg/core/entity"
+	"github.com/SmartDriveInc/maroto/v2/pkg/props"
+	"github.com/SmartDriveInc/maroto/v2/pkg/test"
 	"github.com/stretchr/testify/assert"
 )
 

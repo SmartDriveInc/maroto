@@ -1,7 +1,7 @@
 # Low Memory
 
 ## GoDoc
-* [builder : WithSequentialLowMemory](https://pkg.go.dev/github.com/johnfercher/maroto/v2/pkg/config#CfgBuilder.WithSequentialLowMemoryMode)
+* [builder : WithSequentialLowMemory](https://pkg.go.dev/github.com/SmartDriveInc/maroto/v2/pkg/config#CfgBuilder.WithSequentialLowMemoryMode)
 
 ## Code Example
 [filename](../../assets/examples/lowmemory/v2/main.go  ':include :type=code')
@@ -16,4 +16,4 @@
 
 
 ## Test File
-[filename](https://raw.githubusercontent.com/johnfercher/maroto/master/test/maroto/examples/lowmemory.json  ':include :type=code')
+[filename](https://raw.githubusercontent.com/SmartDriveInc/maroto/master/test/maroto/examples/lowmemory.json  ':include :type=code')

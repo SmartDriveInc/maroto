@@ -3,19 +3,19 @@ package main
 import (
 	"log"
 
-	"github.com/johnfercher/maroto/v2"
-	"github.com/johnfercher/maroto/v2/pkg/core"
+	"github.com/SmartDriveInc/maroto/v2"
+	"github.com/SmartDriveInc/maroto/v2/pkg/core"
 
-	"github.com/johnfercher/maroto/v2/pkg/consts/linestyle"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/linestyle"
 
-	"github.com/johnfercher/maroto/v2/pkg/components/row"
-	"github.com/johnfercher/maroto/v2/pkg/components/text"
-	"github.com/johnfercher/maroto/v2/pkg/consts/align"
-	"github.com/johnfercher/maroto/v2/pkg/consts/border"
-	"github.com/johnfercher/maroto/v2/pkg/consts/fontstyle"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/row"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/text"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/align"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/border"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/fontstyle"
 
-	"github.com/johnfercher/maroto/v2/pkg/config"
-	"github.com/johnfercher/maroto/v2/pkg/props"
+	"github.com/SmartDriveInc/maroto/v2/pkg/config"
+	"github.com/SmartDriveInc/maroto/v2/pkg/props"
 )
 
 func main() {
@@ -78,26 +78,6 @@ func GetMaroto() core.Maroto {
 		{
 			BackgroundColor: &props.Color{220, 220, 220},
 			BorderType:      border.Bottom,
-			BorderColor:     &props.Color{0, 0, 200},
-		},
-		{
-			BackgroundColor: &props.Color{220, 220, 220},
-			BorderType:      border.Left | border.Top,
-			BorderColor:     &props.Color{0, 0, 200},
-		},
-		{
-			BackgroundColor: &props.Color{220, 220, 220},
-			BorderType:      border.Left | border.Right,
-			BorderColor:     &props.Color{0, 0, 200},
-		},
-		{
-			BackgroundColor: &props.Color{220, 220, 220},
-			BorderType:      border.Top | border.Bottom,
-			BorderColor:     &props.Color{0, 0, 200},
-		},
-		{
-			BackgroundColor: &props.Color{220, 220, 220},
-			BorderType:      border.Left | border.Right | border.Top,
 			BorderColor:     &props.Color{0, 0, 200},
 		},
 	}

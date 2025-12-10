@@ -1,15 +1,15 @@
 package col_test
 
 import (
-	"github.com/johnfercher/maroto/v2"
-	"github.com/johnfercher/maroto/v2/pkg/components/code"
-	"github.com/johnfercher/maroto/v2/pkg/components/col"
-	"github.com/johnfercher/maroto/v2/pkg/components/row"
-	"github.com/johnfercher/maroto/v2/pkg/components/signature"
-	"github.com/johnfercher/maroto/v2/pkg/components/text"
-	"github.com/johnfercher/maroto/v2/pkg/consts/border"
-	"github.com/johnfercher/maroto/v2/pkg/consts/linestyle"
-	"github.com/johnfercher/maroto/v2/pkg/props"
+	"github.com/SmartDriveInc/maroto/v2"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/code"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/col"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/row"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/signature"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/text"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/border"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/linestyle"
+	"github.com/SmartDriveInc/maroto/v2/pkg/props"
 )
 
 // ExampleNew demonstrates how to create a Col instance.

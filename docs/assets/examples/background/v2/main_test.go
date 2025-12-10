@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/johnfercher/maroto/v2/pkg/test"
+	"github.com/SmartDriveInc/maroto/v2/pkg/test"
 )
 
 func TestGetMaroto(t *testing.T) {

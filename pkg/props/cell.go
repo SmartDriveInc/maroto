@@ -1,8 +1,8 @@
 package props
 
 import (
-	"github.com/johnfercher/maroto/v2/pkg/consts/border"
-	"github.com/johnfercher/maroto/v2/pkg/consts/linestyle"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/border"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/linestyle"
 )
 
 // Cell is the representation of a cell in the grid system.
@@ -16,7 +16,12 @@ type Cell struct {
 	BorderColor *Color
 	// BorderType defines which kind of border will be applied to a cell.
 	// Default: border.None
+	//
+	// Deprecated: Use BorderConfig for more flexible border control
 	BorderType border.Type
+	// BorderConfig defines which sides of the cell will have borders.
+	// Takes precedence over BorderType if set.
+	BorderConfig *border.BorderConfig
 	// BorderThickness defines the border thickness applied to a cell.
 	// Default: 0.2
 	BorderThickness float64
@@ -33,7 +38,10 @@ func (c *Cell) ToMap() map[string]interface{} {
 
 	m := make(map[string]interface{})
 
-	if c.BorderType != border.None {
+	// BorderConfig takes precedence over BorderType
+	if c.BorderConfig != nil {
+		m["prop_border_config"] = c.BorderConfig.ToGofpdfString()
+	} else if c.BorderType != "" {
 		m["prop_border_type"] = c.BorderType
 	}
 

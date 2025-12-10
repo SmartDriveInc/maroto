@@ -1,10 +1,10 @@
 package cellwriter
 
 import (
-	"github.com/johnfercher/maroto/v2/internal/providers/gofpdf/gofpdfwrapper"
-	"github.com/johnfercher/maroto/v2/pkg/consts/border"
-	"github.com/johnfercher/maroto/v2/pkg/core/entity"
-	"github.com/johnfercher/maroto/v2/pkg/props"
+	"github.com/SmartDriveInc/maroto/v2/internal/providers/gofpdf/gofpdfwrapper"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/border"
+	"github.com/SmartDriveInc/maroto/v2/pkg/core/entity"
+	"github.com/SmartDriveInc/maroto/v2/pkg/props"
 )
 
 type CellWriter interface {
@@ -36,14 +36,19 @@ func (c *cellWriter) Apply(width, height float64, config *entity.Config, prop *p
 			bd = border.Full
 		}
 
-		c.fpdf.CellFormat(width, height, "", bd.String(), 0, "C", false, 0, "")
+		c.fpdf.CellFormat(width, height, "", string(bd), 0, "C", false, 0, "")
 		return
 	}
 
-	bd := prop.BorderType
+	// Determine border string - BorderConfig takes precedence
+	var borderStr string
 	if config.Debug {
-		bd = border.Full
+		borderStr = string(border.Full)
+	} else if prop.BorderConfig != nil {
+		borderStr = prop.BorderConfig.ToGofpdfString()
+	} else {
+		borderStr = string(prop.BorderType)
 	}
 
-	c.fpdf.CellFormat(width, height, "", bd.String(), 0, "C", prop.BackgroundColor != nil, 0, "")
+	c.fpdf.CellFormat(width, height, "", borderStr, 0, "C", prop.BackgroundColor != nil, 0, "")
 }

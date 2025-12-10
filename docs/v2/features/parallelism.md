@@ -1,7 +1,7 @@
 # Parallelism
 
 ## GoDoc
-* [builder : WithConcurrentMode](https://pkg.go.dev/github.com/johnfercher/maroto/v2/pkg/config#CfgBuilder.WithConcurrentMode)
+* [builder : WithConcurrentMode](https://pkg.go.dev/github.com/SmartDriveInc/maroto/v2/pkg/config#CfgBuilder.WithConcurrentMode)
 
 ## Code Example
 [filename](../../assets/examples/parallelism/v2/main.go  ':include :type=code')
@@ -18,4 +18,4 @@
 [filename](../../assets/text/parallel.txt ':include :type=code')
 
 ## Test File
-[filename](https://raw.githubusercontent.com/johnfercher/maroto/master/test/maroto/examples/parallelism.json  ':include :type=code')
+[filename](https://raw.githubusercontent.com/SmartDriveInc/maroto/master/test/maroto/examples/parallelism.json  ':include :type=code')

@@ -4,7 +4,7 @@ import (
 	"io"
 	"time"
 
-	"github.com/phpdave11/gofpdf"
+	"github.com/jung-kurt/gofpdf"
 )
 
 // Fpdf defines the interface used for various methods. It is implemented by the

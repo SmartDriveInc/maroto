@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/johnfercher/maroto/v2/pkg/consts/barcode"
+	"github.com/SmartDriveInc/maroto/v2/pkg/consts/barcode"
 
-	"github.com/johnfercher/maroto/v2/pkg/core/entity"
+	"github.com/SmartDriveInc/maroto/v2/pkg/core/entity"
 
-	"github.com/johnfercher/maroto/v2/internal/code"
-	"github.com/johnfercher/maroto/v2/pkg/props"
+	"github.com/SmartDriveInc/maroto/v2/internal/code"
+	"github.com/SmartDriveInc/maroto/v2/pkg/props"
 	"github.com/stretchr/testify/assert"
 )
 

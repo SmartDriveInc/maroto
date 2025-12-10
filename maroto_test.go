@@ -6,17 +6,17 @@ import (
 	"testing"
 	"time"
 
-	"github.com/johnfercher/maroto/v2/pkg/components/code"
-	"github.com/johnfercher/maroto/v2/pkg/components/text"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/code"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/text"
 
-	"github.com/johnfercher/maroto/v2/pkg/components/col"
-	"github.com/johnfercher/maroto/v2/pkg/components/page"
-	"github.com/johnfercher/maroto/v2/pkg/components/row"
-	"github.com/johnfercher/maroto/v2/pkg/config"
-	"github.com/johnfercher/maroto/v2/pkg/core"
-	"github.com/johnfercher/maroto/v2/pkg/test"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/col"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/page"
+	"github.com/SmartDriveInc/maroto/v2/pkg/components/row"
+	"github.com/SmartDriveInc/maroto/v2/pkg/config"
+	"github.com/SmartDriveInc/maroto/v2/pkg/core"
+	"github.com/SmartDriveInc/maroto/v2/pkg/test"
 
-	"github.com/johnfercher/maroto/v2"
+	"github.com/SmartDriveInc/maroto/v2"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -423,7 +423,7 @@ func TestMaroto_Generate(t *testing.T) {
 func TestMaroto_FitlnCurrentPage(t *testing.T) {
 	t.Run("when component is smaller should available size, should return false", func(t *testing.T) {
 		sut := maroto.New(config.NewBuilder().
-			WithDimensions(210.0, 297.0). // A4 we have 266.9975 of useful height
+			WithDimensions(210.0, 297.0).
 			Build())
 
 		var rows []core.Row
@@ -432,9 +432,8 @@ func TestMaroto_FitlnCurrentPage(t *testing.T) {
 		}
 
 		sut.AddPages(page.New().Add(rows...))
-		assert.False(t, sut.FitlnCurrentPage(10))
+		assert.False(t, sut.FitlnCurrentPage(40))
 	})
-
 	t.Run("when component is larger should the available size, should return true", func(t *testing.T) {
 		sut := maroto.New(config.NewBuilder().
 			WithDimensions(210.0, 297.0).

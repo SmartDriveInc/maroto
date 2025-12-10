@@ -1,22 +1,30 @@
 # Maroto V2
 
-[![GoDoc](https://godoc.org/github.com/johnfercher/maroto?status.svg)](https://pkg.go.dev/github.com/johnfercher/maroto/v2)
+[![GoDoc](https://godoc.org/github.com/SmartDriveInc/maroto?status.svg)](https://pkg.go.dev/github.com/SmartDriveInc/maroto/v2)
 [![Mentioned in Awesome Go](https://awesome.re/mentioned-badge.svg)](https://github.com/avelino/awesome-go#template-engines) 
-[![Go Report Card](https://goreportcard.com/badge/github.com/johnfercher/maroto)](https://goreportcard.com/report/github.com/johnfercher/maroto)
-[![CI](https://github.com/johnfercher/maroto/actions/workflows/goci.yml/badge.svg)](https://github.com/johnfercher/maroto/actions/workflows/goci.yml)
-[![Lint](https://github.com/johnfercher/maroto/actions/workflows/golangci-lint.yml/badge.svg)](https://github.com/johnfercher/maroto/actions/workflows/golangci-lint.yml)
-[![Codecov](https://img.shields.io/codecov/c/github/johnfercher/maroto)](https://codecov.io/gh/johnfercher/maroto)
-[![Visits Badge](https://badges.pufler.dev/visits/johnfercher/maroto)](https://badges.pufler.dev)
-[![Stars Badge](https://img.shields.io/github/stars/johnfercher/maroto.svg?style=social&label=Stars)](https://github.com/johnfercher/maroto/stargazers)
+[![Go Report Card](https://goreportcard.com/badge/github.com/SmartDriveInc/maroto)](https://goreportcard.com/report/github.com/SmartDriveInc/maroto)
+[![CI](https://github.com/SmartDriveInc/maroto/actions/workflows/goci.yml/badge.svg)](https://github.com/SmartDriveInc/maroto/actions/workflows/goci.yml)
+[![Lint](https://github.com/SmartDriveInc/maroto/actions/workflows/golangci-lint.yml/badge.svg)](https://github.com/SmartDriveInc/maroto/actions/workflows/golangci-lint.yml)
+[![Codecov](https://img.shields.io/codecov/c/github/SmartDriveInc/maroto)](https://codecov.io/gh/SmartDriveInc/maroto)
+[![Visits Badge](https://badges.pufler.dev/visits/SmartDriveInc/maroto)](https://badges.pufler.dev)
+[![Stars Badge](https://img.shields.io/github/stars/SmartDriveInc/maroto.svg?style=social&label=Stars)](https://github.com/SmartDriveInc/maroto/stargazers)
 
 ### News :new:
 
-#### 1. Maroto`v2.3.3`is here! Try out:
+#### 1. Github Star
+* Please, if you like maroto consider to nominate`@johnfercher`as a Github star. It's free!
+* Link: https://stars.github.com/
+
+#### 2. Discussion Opened:`Maroto Document Processor` :fire::fire::fire:: 
+
+* We are about to create a document processor to generate PDFs by interpreting serialized data as: yml, json or html. Please contribute with your ideas in [this discussion](https://github.com/SmartDriveInc/maroto/discussions/390).
+
+#### 3. Maroto`v2.3.1`is here! Try out:
 
 * Installation with`go get`:
 
 ```bash
-go get github.com/johnfercher/maroto/v2@v2.3.3
+go get github.com/SmartDriveInc/maroto/v2@v2.3.1
 ```
 
 The public API was completely redesigned with the aim of enhancing the 
@@ -27,7 +35,16 @@ library in various aspects. The main objectives of`v2.0.0`are:
 3. [Add built-in metrics](README.md?id=built-in-metrics);
 4. [Improve execution time](README.md?id=execution-time-improvement);
 5. Allow recursive Row/Col; **(on roadmap)**
-6. Allow generation based on [serialized data](https://github.com/johnfercher/maroto/discussions/390).
+6. Allow generation based on [serialized data](https://github.com/SmartDriveInc/maroto/discussions/390).
+
+## Migration
+
+1. We will no longer maintain the current version`v1.0.0`of maroto.
+   - The last version`v0.43.0`was released as`v1.0.0`through the main branch, marking the end of the old version.
+   - The old`v1`code was moved to a`v1`branch.
+2. The master branch now keeps the`v2`code, being the default implementation now.
+   - [Beta versions](https://go.dev/doc/modules/version-numbers) will be released as we achieve small deliverables.
+   - There still some issues not solved from`v1`, but`v2`already solved more than 20 issues from`v1`.
 
 ## Code Example
 This is part of the [simplest example](v2/examples/simplest?id=simplest).
@@ -96,7 +113,7 @@ feature within maroto, such as (Row, Col, Text, QRCode, Image, etc). With the ne
 improved, enabling maroto to reach a whole new level in this fresh new step.
 
 ### New Interfaces
-[filename](https://raw.githubusercontent.com/johnfercher/maroto/master/pkg/core/core.go ':include :type=code')
+[filename](https://raw.githubusercontent.com/SmartDriveInc/maroto/master/pkg/core/core.go ':include :type=code')
 
 ## Unit Testing
 In maroto`v2`, it is possible to write unit tests by analyzing the **components tree**. To facilitate the 
@@ -127,7 +144,7 @@ The pages are merged using [pdfcpu][pdfcpu]. For a complete example, please refe
 [this link](v2/features/parallelism?id=parallelism).
 
 
-[gofpdf]: https://github.com/phpdave11/gofpdf
+[gofpdf]: https://github.com/jung-kurt/gofpdf
 [pdfcpu]: https://github.com/pdfcpu/pdfcpu
-[old_maroto_interface]: https://github.com/johnfercher/maroto/blob/master/pkg/pdf/pdf.go
-[old_row_issue]: https://github.com/johnfercher/maroto/issues/55
+[old_maroto_interface]: https://github.com/SmartDriveInc/maroto/blob/master/pkg/pdf/pdf.go
+[old_row_issue]: https://github.com/SmartDriveInc/maroto/issues/55

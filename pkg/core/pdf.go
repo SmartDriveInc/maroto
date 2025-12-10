@@ -5,9 +5,9 @@ import (
 	"encoding/base64"
 	"os"
 
-	"github.com/johnfercher/maroto/v2/internal/time"
-	"github.com/johnfercher/maroto/v2/pkg/merge"
-	"github.com/johnfercher/maroto/v2/pkg/metrics"
+	"github.com/SmartDriveInc/maroto/v2/internal/time"
+	"github.com/SmartDriveInc/maroto/v2/pkg/merge"
+	"github.com/SmartDriveInc/maroto/v2/pkg/metrics"
 )
 
 type Pdf struct {
